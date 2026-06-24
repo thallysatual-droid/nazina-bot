@@ -1,1 +1,8 @@
-
+{
+  "name": "nazuna-bot",
+  "version": "1.0.0",
+  "main": "bot.js",
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.6.0"
+  }
+}
