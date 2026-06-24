@@ -1,4 +1,15 @@
 const { default: makeWASocket, useMultiFileAuthState } = require("@whiskeysockets/baileys")
+const express = require("express")
+
+const app = express()
+
+app.get("/", (req, res) => {
+    res.send("Nazuna Bot está online 🚀")
+})
+
+app.listen(3000, () => {
+    console.log("Servidor rodando na porta 3000")
+})
 
 async function startBot() {
     const { state, saveCreds } = await useMultiFileAuthState("auth")
@@ -24,17 +35,4 @@ async function startBot() {
     })
 }
 
-// 🔥 ISSO SEGURA O BOT RODANDO
 startBot()
-
-// 👇 servidor fake pra não desligar
-const express = require("express")
-const app = express()
-
-app.get("/", (req, res) => {
-    res.send("Nazuna Bot está online 🚀")
-})
-
-app.listen(3000, () => {
-    console.log("Servidor rodando na porta 3000")
-})
